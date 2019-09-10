@@ -1,0 +1,50 @@
+<html>
+<head>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        table,th,td {
+            border: 1px solid black;
+        }
+    </style> 
+</head>
+<body>
+    <h1>
+        <a href="/">Home</a>
+        <a href="/newTasks">Add New Task</a>
+        <a href="/newDeveloper">Add New Developer</a>
+        <a href="/listTasks">List All Tasks</a>
+        <a href="/updateTasks">Update Tasks</a>
+        <a href="/deleteTasks">Delete Task</a>
+        <a href="/deleteOldComplete">Delete Completed Tasks</a>
+    </h1>
+
+    </br>
+    <h3>
+        <table>
+            <tr>
+                <th>ID</th>                
+                <th>Name</th>                
+                <th>Level</th>
+                <th>Address</th>
+
+
+            </tr>
+            <% for ( var i =0; i< developerCol.length;i++){ %>
+                <tr>
+                    <td>
+                        <%= developerCol[i]._id %>
+                    </td>
+                    <td>
+                        <%= developerCol[i].name.firstName %> <%= developerCol[i].name.lastName %>
+                    </td>
+                    <td>
+                        <%= developerCol[i].level %>
+                    </td>
+                    <td>
+                        <%= developerCol[i].address.unit %> <%= developerCol[i].address.street %>, <%= developerCol[i].address.suburb %>, <%= developerCol[i].address.state %>
+                    </td>
+                </tr>
+                <% }%>
+    </h3>
+</body>
+</html>

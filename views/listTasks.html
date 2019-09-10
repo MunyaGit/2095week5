@@ -1,0 +1,54 @@
+<html>
+<head>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        table,th,td {
+            border: 1px solid black;
+        }
+    </style> 
+</head>
+<body>
+    <h1>
+        <a href="/">Home</a>
+        <a href="/newTasks">Add New Task</a>
+        <a href="/updateTasks">Update Tasks</a>
+        <a href="/deleteTasks">Delete Task</a>
+        <a href="/deleteOldComplete">Delete Completed Tasks</a>
+    </h1>
+
+    </br>
+    <h3>
+        <table>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Assigned To</th>
+                <th>Due Date</th>
+                <th>Status</th>
+                <th>Description</th>
+            </tr>
+            <% for ( var i =0; i< taskCol.length;i++){ %>
+                <tr>
+                    <td>
+                        <%= taskCol[i]._id %>
+                    </td>
+                    <td>
+                        <%= taskCol[i].name %>
+                    </td>
+                    <td>
+                        <%= taskCol[i].assign_to %>
+                    </td>
+                    <td>
+                        <%= taskCol[i].due_date %>
+                    </td>
+                    <td>
+                        <%= taskCol[i].task_status %>
+                    </td>
+                    <td>
+                        <%= taskCol[i].task_description %>
+                    </td>
+                </tr>
+                <% }%>
+    </h3>
+</body>
+</html>
